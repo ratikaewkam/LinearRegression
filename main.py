@@ -19,8 +19,8 @@ def gradient_descent(x, y, m_now, b_now, alpha):
     n = len(x)
     for i in range(n):
         y_pred = (m_now*x[i]) + b_now
-        dm += (-2/n) * np.sum((y[i]-y_pred) * x[i]) # Derivative of mean squared error (m)
-        db += (-2/n) * np.sum((y[i]-y_pred)) # Derivative of mean squared error (b)
+        dm += (-2/n) * (y[i]-y_pred) * x[i] # Derivative of mean squared error (m)
+        db += (-2/n) * (y[i]-y_pred) # Derivative of mean squared error (b)
     m = m_now - alpha*dm
     b = b_now - alpha*db
 
